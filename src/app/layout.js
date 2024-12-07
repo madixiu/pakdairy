@@ -22,6 +22,12 @@ export default function RootLayout({ children }) {
   const { isRTL } = true;
   return (
     <html lang="en" dir="rtl">
+       <head>
+        <link 
+          href="https://cdnjs.cloudflare.com/ajax/libs/vazir-font/30.1.0/font-face.css" 
+          rel="stylesheet" 
+        />
+      </head>
       <body
         
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
