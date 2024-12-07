@@ -1,9 +1,31 @@
 "use client";
 import Image from "next/image";
-
-// import Link from "next/link";
+import Link from "next/link";
+import { useRouter } from 'next/navigation'
 import { useState, useEffect } from "react";
 function Topbar() {
+  const router = useRouter()
+
+  const routes = [
+    {
+      name: "خانه",
+      href: "/",
+    },
+    {name: "کارخانه ها و شعبات فروش",href:"/#"},
+    {name: "اخبار",href:"/#"},
+    {name: "امور مجامع و سهام" , href:"/#"},
+    {name: "حاکمیت شرکتی",href:"/#"},
+    {name: "استخدام",href:"/#"},
+
+    {
+      name: "درباره شرکت",
+      href: "/about",
+    },
+    {
+      name: "تماس با ما",
+      href: "/contact",
+    },
+  ];
   const [isScrolled, setIsScrolled] = useState(false);
   const buttonClass =
     "px-4 py-2 mx-3 text-base font-medium text-gray-700 rounded-xl hover:text-primary hover:bg-primary hover:bg-opacity-5 transition duration-300 ease-in-out";
@@ -30,12 +52,18 @@ function Topbar() {
       <div className="container mx-auto flex justify-between items-center h-full px-4">
         {/* Left Buttons */}
         <div className="flex flex-1 justify-center">
-          {["خانه",   "کارخانه ها و شعبات فروش", "اخبار", "امور مجامع و سهام"].map(
-            (label, index) => (
+          {routes.slice(0,4).map(
+            (item, index) => (
               <button
                 key={index}
-                className={buttonClass}>
-                {label}
+                className={buttonClass} 
+                onClick={() => {
+                  // window.location.href = item.href;
+                  router.push(item.href);
+                }}
+                >
+                {item.name}
+               
               </button>
             )
           )}
@@ -54,10 +82,16 @@ function Topbar() {
 
         {/* Right Buttons */}
         <div className="flex flex-1 justify-center">
-          {["حاکمیت شرکتی", "استخدام", "درباره شرکت", "تماس با ما"].map(
-            (label, index) => (
-              <button key={index} className={buttonClass}>
-                {label}
+          {routes.slice(4,8).map(
+            (item, index) => (
+              <button key={index} className={buttonClass} 
+              onClick={() => 
+                // window.location.href = item.href
+              {  router.push(item.href)}
+
+
+              }>
+                {item.name}
               </button>
             )
           )}
