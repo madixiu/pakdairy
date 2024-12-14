@@ -1,7 +1,8 @@
 // components/Contact.js
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-
+import ContactForm from '../Components/contact/ContactForm';
+import SocialMediaIcons from '../Components/contact/SocialMediaIcons';
 const Contact = () => {
   return (
     <div className='h-full mt-20 justify-center'>
@@ -43,14 +44,15 @@ const Contact = () => {
               <span className="text-gray-700 font-bold">صندوق پستی:</span>
               <span className="text-gray-700 ms-2">۱۳۸۶۵۳۶۴</span>
             </div>
+            <SocialMediaIcons />
           </div>
           <div className='bg-slate-50 rounded-lg shadow-lg p-1'>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25928.07407464602!2d51.308093!3d35.67677400000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8dfe5e6f4e17fb%3A0x702668486e2f8b3c!2sPak%20Dairy%20Co.!5e0!3m2!1sen!2sus!4v1734157115739!5m2!1sen!2sus" width={500} height={350}  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25928.07407464602!2d51.308093!3d35.67677400000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8dfe5e6f4e17fb%3A0x702668486e2f8b3c!2sPak%20Dairy%20Co.!5e0!3m2!1sen!2sus!4v1734157115739!5m2!1sen!2sus" width={500} height={450}  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
-        {/* <div className='flex bg-black'>
-          here
-        </div> */}
+        <div className='flex w-1/2'>
+          <ContactForm />
+        </div>
       </div>
     </div>
   );
