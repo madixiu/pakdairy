@@ -46,7 +46,7 @@ function Topbar() {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
         isScrolled
           ? "bg-white bg-opacity-90 h-20 shadow-sm"
-          : "bg-transparent h-24"
+          : "bg-white h-24"
       }`}
     >
       <div className="container mx-auto flex justify-between items-center h-full px-4">

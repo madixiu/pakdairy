@@ -19,9 +19,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   // const { isRTL } = useContext(LanguageContext);
-  const { isRTL } = true;
+  const  isRTL  = "rtl";
   return (
-    <html lang="en" dir="rtl">
+    <html lang="en" dir={isRTL}>
        <head>
         <link 
           href="https://cdnjs.cloudflare.com/ajax/libs/vazir-font/30.1.0/font-face.css" 
