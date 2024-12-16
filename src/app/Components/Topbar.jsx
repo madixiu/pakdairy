@@ -14,7 +14,7 @@ function Topbar() {
     {name: "کارخانه ها و شعبات فروش",href:"#"},
     {name: "اخبار",href:"/#"},
     {name: "امور مجامع و سهام" , href:"#"},
-    {name: "حاکمیت شرکتی",href:"#"},
+    {name: "حاکمیت شرکتی",href:"/corporate"},
     {name: "استخدام",href:"#"},
 
     {

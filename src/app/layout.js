@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
       >
 
         <Topbar /> {/* Render the Topbar */}
-        <main className="pt-24 min-h-screen bg-slate-100 p-4">{children}</main> {/* Render the page content */}
+        <main className="pt-24 min-h-screen bg-slate-100">{children}</main> {/* Render the page content */}
       </body>
     </html>
   );
