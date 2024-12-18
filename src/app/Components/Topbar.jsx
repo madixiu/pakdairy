@@ -22,7 +22,7 @@ function Topbar() {
       href: "/about",
     },
     {
-      name: "تماس با ما",
+      name: "ارتباط با ما",
       href: "/contact",
     },
   ];
