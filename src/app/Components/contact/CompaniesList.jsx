@@ -65,7 +65,7 @@ function CompaniesList() {
               <span className="me-2">{company.postalCode}</span>
             </div>
           </div>
-          <div className="w-full h-64 rounded-3xl overflow-hidden relative shadow-md border-2 border-gray-300">
+          <div className="aspect-square h-64 rounded-3xl overflow-hidden relative shadow-md border-2 border-gray-300">
             <iframe
               src={company.mapLink}
               className="absolute inset-0 w-full h-full"
