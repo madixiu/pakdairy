@@ -4,6 +4,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import ContactForm from '../Components/contact/ContactForm';
 import SocialMediaIcons from '../Components/contact/SocialMediaIcons';
 import CompaniesList from '../Components/contact/CompaniesList';
+import SalesList from '../Components/contact/SalesList';
 const Contact = () => {
   return (
     <div className="h-full mt-20 justify-center">
@@ -45,7 +46,7 @@ const Contact = () => {
               <span className="text-gray-700 font-bold">صندوق پستی:</span>
               <span className="text-gray-700 ms-2">۱۳۸۶۵۳۶۴</span>
             </div>
-            <div className='w-full'>
+            <div className="w-full">
               <SocialMediaIcons />
             </div>
           </div>
@@ -69,9 +70,14 @@ const Contact = () => {
           <h2 className="text-2xl font-bold text-right ms-10 mb-4">
             کارخانه ها
           </h2>
-          <CompaniesList /> 
+          <CompaniesList />
         </div>
-        <div>here</div>
+        <div>
+          <h2 className="text-2xl font-bold text-right ms-10 mb-4">
+            مراکز فروش
+          </h2>
+          <SalesList />
+        </div>
       </div>
     </div>
   );
