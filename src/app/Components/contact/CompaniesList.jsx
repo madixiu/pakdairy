@@ -41,7 +41,7 @@ function CompaniesList() {
       {companies.map((company, index) => (
         <div
           key={index}
-          className="flex flex-row items-center justify-between h-full mb-2 bg-white p-1 rounded-3xl shadow-md w-[40%]"
+          className="flex flex-row items-center justify-between h-full mb-2 bg-white p-1 rounded-3xl shadow-md w-full"
         >
           <div className="flex flex-col items-start justify-evenly h-64 py-4 ms-2 mb-2">
             <div className="flex flex-row items-center">
