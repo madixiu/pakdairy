@@ -11,10 +11,10 @@ function Topbar() {
       name: "خانه",
       href: "/",
     },
-    {name: "کارخانه ها و شعبات فروش",href:"#"},
+    {name: "محصولات",href:"/products"},
     {name: "اخبار",href:"/#"},
-    {name: "امور مجامع و سهام" , href:"#"},
-    {name: "حاکمیت شرکتی",href:"/corporate"},
+    // {name: "امور مجامع و سهام" , href:"#"},
+    // {name: "حاکمیت شرکتی",href:"/corporate"},
     {name: "استخدام",href:"#"},
 
     {
@@ -28,7 +28,7 @@ function Topbar() {
   ];
   const [isScrolled, setIsScrolled] = useState(false);
   const buttonClass =
-    "px-4 py-2 mx-3 text-base font-bold text-gray-700 rounded-xl hover:text-primary hover:bg-primary hover:bg-opacity-5 transition duration-300 ease-in-out";
+    "px-4 py-2 mx-5 text-base font-bold text-gray-700 rounded-xl hover:text-primary hover:border hover:bg-primary hover:bg-opacity-5 transition duration-300 ease-in-out";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +52,7 @@ function Topbar() {
       <div className="container mx-auto flex justify-between items-center h-full px-4">
         {/* Left Buttons */}
         <div className="flex flex-1 justify-center">
-          {routes.slice(0, 4).map((item, index) => (
+          {routes.slice(0, 3).map((item, index) => (
             <button
               key={index}
               className={buttonClass}
@@ -79,7 +79,7 @@ function Topbar() {
 
         {/* Right Buttons */}
         <div className="flex flex-1 justify-center">
-          {routes.slice(4, 8).map((item, index) => (
+          {routes.slice(3, 6).map((item, index) => (
             <button
               key={index}
               className={buttonClass}
