@@ -19,9 +19,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   // const { isRTL } = useContext(LanguageContext);
-  const { isRTL } = true;
+  const  isRTL  = "rtl";
   return (
-    <html lang="en" dir="rtl">
+    <html lang="en" dir={isRTL}>
        <head>
         <link 
           href="https://cdnjs.cloudflare.com/ajax/libs/vazir-font/30.1.0/font-face.css" 
@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
       >
 
         <Topbar /> {/* Render the Topbar */}
-        <main className="mt-24">{children}</main> {/* Render the page content */}
+        <main className="pt-24 min-h-screen bg-slate-100">{children}</main> {/* Render the page content */}
       </body>
     </html>
   );
