@@ -53,36 +53,82 @@ function About() {
   ];
   const AppointmentsCommitteeList = [
     {
-      name:  'مهرداد وطنی	',
+      name: 'مهرداد وطنی	',
       position: 'رئیس',
       education: 'دکتری',
       backgroundExperience: 'عضو موظف هیات مدیره شرکت فولاد متیل',
     },
     {
-      name:  'فرزاد ترابی',
+      name: 'فرزاد ترابی',
       position: 'عضو',
       education: 'کارشناسی ارشد	',
       backgroundExperience: 'معاون مالي اقتصادي شرکت شيرپاستوريزه پگاه اصفهان',
     },
     {
-      name:  'امید هاشمی',
+      name: 'امید هاشمی',
       position: 'عضو و دبیر	',
       education: 'کارشناسی ارشد	',
-      backgroundExperience: 'دبیر هیات مدیره و مدیر امور مدیران شرکت لبنیات پاستوریزه پاک',
+      backgroundExperience:
+        'دبیر هیات مدیره و مدیر امور مدیران شرکت لبنیات پاستوریزه پاک',
     },
     {
-      name:  'داود افروز',
+      name: 'داود افروز',
       position: 'عضو',
       education: 'کارشناسی ارشد	',
       backgroundExperience: 'مدیر آموزش و توسعه انسانی شرکت رایتل',
     },
     {
-      name:  'علی اسدی افشار',
+      name: 'علی اسدی افشار',
       position: 'عضو',
       education: 'کارشناسی ارشد	',
       backgroundExperience: 'مدیر حراست شرکت لبنیات پاستوریزه پاک',
     },
-
+  ];
+  const RiskCommitteeList = [
+    {
+      name: 'ایمان هدایتی',
+      position: 'رئیس',
+      education: 'کارشناسی ارشد',
+      backgroundExperience: 'مدیر مالی شرکت سرمایه گذاری ایران',
+    },
+    {
+      name: 'مهدی باباخانی',
+      position: 'عضو و دبیر',
+      education: 'کارشناسی ارشد	',
+      backgroundExperience: 'مدیرمالی شرکت لبنیات پاستوریزه پاک',
+    },
+    {
+      name: 'سید وحید وحیدی',
+      position: 'عضو',
+      education: 'کارشناسی ارشد',
+      backgroundExperience: 'رئیس هیات مدیره شرکت پخش سراسری پاک',
+    },
+  ];
+  const AuditCommittee = [
+    {
+      name: 'ایمان هدایتی',
+      position: 'رئیس',
+      education: 'کارشناسی ارشد',
+      backgroundExperience: 'مدیر مالی شرکت سرمایه گذاری ایران',
+    },
+    {
+      name: 'علیرضا غیاثوند',
+      position: 'عضو',
+      education: 'دکتری',
+      backgroundExperience: 'عضو هیات علمی دانشگاه-کارشناس رسمی دادگستری',
+    },
+    {
+      name: 'حسین بخشی',
+      position: 'عضو',
+      education: 'دکتری',
+      backgroundExperience: 'عضو شورای عالی جامعه حسابداران رسمی ایران',
+    },
+    {
+      name: 'فرزاد ترابی',
+      position: 'عضو ناظر',
+      education: 'کارشناسی ارشد',
+      backgroundExperience: 'معاون مالي اقتصادي شرکت شيرپاستوريزه پگاه اصفهان',
+    },
   ];
   const aboutUStext =
     'گروه لبنیات پاک با بیش از ۶۰ سال سابقه تولید فرآورده های لبنی، جزو اولین و پرسابقه ترین شرکت‌های فعال در تولید محصولات لبنی در کشور می‌باشد. این شرکت با تولید انواع شیر، پنیر، ماست، کره، خامه، بستنی و ... بخشی از نیاز روزانه‌ی کشور را تولید و تامین می‌نماید. شرکت لبنیات پاک در سخت‌ترین شرایط هشت سال دفاع مقدس و همچنین در کنار تحریم‌های اقتصادی دشمن با تلاشی خستگی‌ناپذیر در کنار مردم و برای مردم فعالیت نموده و در حال حاضر نیز با گسترش و ایجاد تنوع تولیدات خود، هم چون گذشته تامین کننده‌ی بخش مهمی از نیاز مردم کشور عزیزمان می‌باشد. با نام‌گذاری سال ۱۳۹۹ به نام "جهش تولید" از سوی مقام معظم رهبری و به دنبال آن نام گذاری سال ۱۴۰۰ به نام سال "تولید، پشتیبانی‌ها و مانع‌زدایی‌ها" توسط معظم له، نیاز به بستر سازی‌ها و تغییرات اساسی در این مجموعه بیش از پیش احساس می‌شد، لذا شرکت لبنیات پاک با بهرمندی از تجارب سازنده‌ی مدیران و متخصصین دلسوز خود در ادوار گذشته، از دی‌ماه ۱۳۹۹ قدم در مسیری تازه نهاد. این شرکت با بهرهمندی از قابلیت‌های موجود در مجموعه خود و همچنین با جذب متخصصین جوان، دلسوز و پرتلاش، نوسازی، افزایش ظرفیت و تنوع بخشی تولید، کاهش هزینه‌های سربار و ارتقاء کیفیت محصولات خود را آغاز نمود و با گذشت حدود شش ماه از آغاز بکار تیم مدیریتی جوان، این مجموعه موفق به انجام بیش از ۱۲۰ پروژه و برنامه سازنده در راستای بهبود شرایط تولید، ارتقاء کیفیت و رضایتمندی مصرف‌کننده و همچنین تامین امکانات رفاهی نیروهای خود شد.';
@@ -109,7 +155,7 @@ function About() {
           </div>
         </div>
       </section>
-      <div className="mt-20 pb-10">
+      <div className="mt-20">
         <h2 className="text-2xl font-bold text-right ms-10 mb-4">
           اعضای هیات مدیره شرکت لبنیات پاک
         </h2>
@@ -147,7 +193,7 @@ function About() {
           </Table>
         </div>
       </div>
-      <div className="mt-20 pb-20">
+      <div className="mt-20">
         <h2 className="text-2xl font-bold text-right ms-10 mb-4">
           کمیته انتصابات پاک
         </h2>
@@ -164,6 +210,74 @@ function About() {
             </TableHeader>
             <TableBody>
               {AppointmentsCommitteeList.map((person) => (
+                <TableRow key={person.nationalCode}>
+                  <TableCell className="font-medium">{person.name}</TableCell>
+
+                  <TableCell className="text-right">
+                    {person.position}
+                  </TableCell>
+                  <TableCell className="text-right">
+                    {person.education}
+                  </TableCell>
+                  <TableCell className="text-right">
+                    {person.backgroundExperience}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      </div>
+      <div className="mt-20">
+        <h2 className="text-2xl font-bold text-right ms-10 mb-4">کمیته ریسک</h2>
+        <div className="m-5 p-5 bg-white rounded-lg">
+          <Table>
+            {/* <TableCaption>A list of your recent HeadQuarterList.</TableCaption> */}
+            <TableHeader>
+              <TableRow>
+                <TableHead className="text-right">نام و نام خانوادگی</TableHead>
+                <TableHead className="text-right">سمت</TableHead>
+                <TableHead className="text-right">تحصیلات</TableHead>
+                <TableHead className="text-right">زمینه سوابق کاری</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {RiskCommitteeList.map((person) => (
+                <TableRow key={person.nationalCode}>
+                  <TableCell className="font-medium">{person.name}</TableCell>
+
+                  <TableCell className="text-right">
+                    {person.position}
+                  </TableCell>
+                  <TableCell className="text-right">
+                    {person.education}
+                  </TableCell>
+                  <TableCell className="text-right">
+                    {person.backgroundExperience}
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      </div>
+      <div className="mt-20 pb-20">
+        <h2 className="text-2xl font-bold text-right ms-10 mb-4">
+          کمیته حسابرسی
+        </h2>
+        <div className="m-5 p-5 bg-white rounded-lg">
+          <Table>
+            {/* <TableCaption>A list of your recent HeadQuarterList.</TableCaption> */}
+            <TableHeader>
+              <TableRow>
+                <TableHead className="text-right">نام و نام خانوادگی</TableHead>
+                <TableHead className="text-right">سمت</TableHead>
+                <TableHead className="text-right">تحصیلات</TableHead>
+                <TableHead className="text-right">زمینه سوابق کاری</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {RiskCommitteeList.map((person) => (
                 <TableRow key={person.nationalCode}>
                   <TableCell className="font-medium">{person.name}</TableCell>
 
