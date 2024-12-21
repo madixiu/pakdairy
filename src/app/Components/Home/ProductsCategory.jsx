@@ -118,7 +118,7 @@ function ProductsCategory() {
             ease-in-out
           ">
             <Image
-              src={`/categories/${category.id}.svg`}
+              src={`/svg/categories/${category.id}.svg`}
               alt={category.name}
               width={32}
               height={32}
