@@ -1,62 +1,61 @@
-import Image from "next/image";
+import Image from 'next/image';
 function ProductsCategory() {
-  const categories =[
-    { 
-      id:"milk",
-      name:"شیر",
-      href:"#"
+  const categories = [
+    {
+      id: 'milk',
+      name: 'شیر',
+      href: '#',
     },
     {
-      id:"doogh",
-      name:"دوغ",
-      href:"#"
+      id: 'doogh',
+      name: 'دوغ',
+      href: '#',
     },
     {
-      id:"cheese",
+      id: 'cheese',
 
-      name:"پنیر",
-      href:"#"
+      name: 'پنیر',
+      href: '#',
     },
     {
-      id:"butter",
+      id: 'butter',
 
-      name:"کره",
-      href:"#"
+      name: 'کره',
+      href: '#',
     },
     {
-      id:"icecream",
+      id: 'icecream',
 
-      name:"بستنی",
-      href:"#"
+      name: 'بستنی',
+      href: '#',
     },
     {
-      id:"yogurt",
+      id: 'yogurt',
 
-      name:"ماست",
-      href:"#"
+      name: 'ماست',
+      href: '#',
     },
     {
-      id:"cream",
+      id: 'cream',
 
-      name:"خامه",
-      href:"#"
+      name: 'خامه',
+      href: '#',
     },
     {
-      id:"caramel",
+      id: 'caramel',
 
-      name:"کارامل",
-      href:"#"
-    }
-  ]
-  return ( 
-
-    
-    <div className=" mx-20 mt-10 h-32  shadow-sm">
-    <div className="flex justify-center items-center h-full">
-      {categories.map((category, index) => (
-        <div 
-          key={category.name} 
-          className="
+      name: 'کارامل',
+      href: '#',
+    },
+  ];
+  return (
+    <div className=" mx-20 mt-10 h-32">
+      <h2 className="text-2xl font-bold text-right mb-10">محصولات</h2>{' '}
+      <div className="flex justify-center items-center h-full rounded-lg">
+        {categories.map((category, index) => (
+          <div
+            key={category.name}
+            className="
             relative 
             flex 
             w-full 
@@ -69,26 +68,30 @@ function ProductsCategory() {
             transition-all 
             duration-200 
             ease-in-out
-            hover:border-slate-400 
+            rounded-lg
+            hover:border-slate-300 
             hover:border-opacity-50
           "
-        >
-          {/* Border Animation Layer */}
-          <div className="
+          >
+            {/* Border Animation Layer */}
+            <div
+              className="
             absolute 
             inset-0 
             border-b-2 
             border-transparent 
-            group-hover:border-slate-400 
+            group-hover:border-slate-300 
             group-hover:border-opacity-50
             transition-all 
             duration-100 
             ease-in-out 
             z-0
-          "></div>
-  
-          {/* Hover Background Layer with Top to Bottom Animation */}
-          <div className="
+          "
+            ></div>
+
+            {/* Hover Background Layer with Top to Bottom Animation */}
+            <div
+              className="
             absolute 
             inset-0 
             bg-primary
@@ -101,10 +104,12 @@ function ProductsCategory() {
             duration-300 
             ease-in-out 
             z-0
-          "></div>
-  
-          {/* Content Container */}
-          <div className="
+          "
+            ></div>
+
+            {/* Content Container */}
+            <div
+              className="
             flex 
             flex-col 
             justify-center 
@@ -116,37 +121,39 @@ function ProductsCategory() {
             transition-transform 
             duration-300 
             ease-in-out
-          ">
-            <Image
-              src={`/svg/categories/${category.id}.svg`}
-              alt={category.name}
-              width={32}
-              height={32}
-              objectFit="contain"
-              
-              className="
+          "
+            >
+              <Image
+                src={`/svg/categories/${category.id}.svg`}
+                alt={category.name}
+                width={32}
+                height={32}
+                objectFit="contain"
+                className="
                 w-10 
                 h-10
                 group-hover:opacity-80 
                 transition-opacity 
                 duration-300
               "
-            />
-            <span className="
+              />
+              <span
+                className="
               text-slate-600 
               text-sm 
               group-hover:text-slate-800 
               transition-colors 
               duration-300
-            ">
-              {category.name}
-            </span>
+            "
+              >
+                {category.name}
+              </span>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
-  </div>
-   );
+  );
 }
 
 export default ProductsCategory;
