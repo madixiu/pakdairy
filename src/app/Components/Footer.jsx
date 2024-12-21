@@ -1,15 +1,24 @@
 // components/Footer.js
 
 import React from 'react';
-import SocialMediaIcons from './contact/SocialMediaIcons';
-import { FaYoutube, FaWhatsapp, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaYoutube, FaWhatsapp, FaTwitter, FaInstagram,FaEnvelope } from 'react-icons/fa';
 import Image from 'next/image';
 
 function Footer() {
   return (
-    <footer className="bg-white text-primary  shadow-lg">
-      <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-white text-primary shadow-lg">
+      <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+        
         {/* Logo Section */}
+        <div className="flex items-center justify-center md:justify-start">
+          <Image 
+            src="/logo.png" // Replace with your logo path
+            alt="Company Logo"
+            width={100} // Adjust width as needed
+            height={100} // Adjust height as needed
+          />
+        </div>
+
         {/* Quick Access Section */}
         <div>
           <h3 className="text-lg font-bold mb-4">دسترسی سریع</h3>
@@ -40,14 +49,14 @@ function Footer() {
         {/* Contact Us Section */}
         <div>
           <h3 className="text-lg font-bold mb-4">ارتباط با ما</h3>
-          <p>
-            Email:{' '}
+          <span>
+          <FaEnvelope className="mr-2" /> {/* Email icon */}
             <a href="mailto:info@example.com" className="hover:underline">
               info@pakdairy.com
             </a>
-          </p>
+          </span>
           <p>
-            Phone:{' '}
+            Phone:
             <a href="tel:+1234567890" className="hover:underline">
               +982164960000
             </a>
@@ -62,7 +71,7 @@ function Footer() {
               href="https://www.youtube.com"
               target="_blank"
               rel="noopener noreferrer"
-              className=" hover:text-red-600 transition-colors duration-100 me-2"
+              className="hover:text-red-600 transition-colors duration-100 me-2"
             >
               <FaYoutube size={20} />
             </a>
@@ -70,7 +79,7 @@ function Footer() {
               href="https://wa.me/989981440061"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-green-500  transition-colors duration-100 mx-2"
+              className="hover:text-green-500 transition-colors duration-100 mx-2"
             >
               <FaWhatsapp size={20} />
             </a>
