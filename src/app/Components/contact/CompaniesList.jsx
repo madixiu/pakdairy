@@ -44,6 +44,10 @@ function CompaniesList() {
           className="flex flex-row items-center justify-between h-full mb-2 bg-white p-1 rounded-3xl shadow-md w-full"
         >
           <div className="flex flex-col items-start justify-evenly h-64 py-4 ms-2 mb-2">
+          <div className="flex flex-row items-center">
+      
+              <span className="me-2 font-bold">{company.name}</span>
+            </div>
             <div className="flex flex-row items-center">
               <FaMapMarkerAlt />
               <span className="font-bold ms-2 me-2">آدرس:</span>
@@ -52,17 +56,17 @@ function CompaniesList() {
             <div className="flex flex-row items-center">
               <FaPhoneAlt />
               <span className="font-bold ms-2 me-2">تلفن:</span>
-              <span className="me-2">{company.phoneNumber}</span>
+              <span className="me-2 text-sm">{company.phoneNumber}</span>
             </div>
             <div className="flex flex-row items-center">
               <FaPhoneAlt />
               <span className="font-bold ms-2 me-2">سایت فروش:</span>
-              <span className="me-2">{company.saleNumber}</span>
+              <span className="me-2 text-sm">{company.saleNumber}</span>
             </div>
             <div className="flex flex-row items-center">
               <FaEnvelope />
               <span className="font-bold ms-2 me-2">کدپستی:</span>
-              <span className="me-2">{company.postalCode}</span>
+              <span className="me-2 text-sm">{company.postalCode}</span>
             </div>
           </div>
           <div className="aspect-square h-64 rounded-3xl overflow-hidden relative shadow-md border-2 border-gray-300">
