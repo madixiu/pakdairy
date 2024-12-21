@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Topbar from "./Components/Topbar";
+import Footer from "./Components/Footer";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -15,7 +16,7 @@ const geistMono = localFont({
 export const metadata = {
   title: "شرکت لبنیات پاستوریزه پاک",
   description: "مجموعه لبنی پاک با برندی معتبر، ارائه دهنده سبد کامل فرآورده های سالم، باکیفیت و رقابتی، بهترین انتخاب مشتریان و فعال در بازارهای ملی و فرا ملی است.",
-};
+};<Footer />
 
 export default function RootLayout({ children }) {
   // const { isRTL } = useContext(LanguageContext);
@@ -34,7 +35,8 @@ export default function RootLayout({ children }) {
       >
 
         <Topbar /> {/* Render the Topbar */}
-        <main className="pt-24 min-h-screen bg-slate-100">{children}</main> {/* Render the page content */}
+        <main className="py-24 min-h-screen bg-slate-100">{children}</main> {/* Render the page content */}
+        <Footer />
       </body>
     </html>
   );

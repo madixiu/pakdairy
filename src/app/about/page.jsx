@@ -11,7 +11,6 @@ function About() {
   const HeadQuarterList = [
     {
       name: 'مهرداد وطنی',
-      nationalCode: '1270566520',
       represent: 'شرکت مادرتخصصی مالی و سرمایه گذاری سینا',
       position: 'رئیس هیات مدیره(غیر موظف)',
       education: 'دکتری',
@@ -19,7 +18,6 @@ function About() {
     },
     {
       name: 'عبدالله قدوسی',
-      nationalCode: '6249313125',
       represent: 'شرکت مادرتخصصی گسترش صنایع غذایی سینا',
       position: 'مدیرعامل و نایب رئیس هیات مدیره(موظف)',
       education: 'کارشناسی ارشد	',
@@ -27,7 +25,6 @@ function About() {
     },
     {
       name: 'محمد عاصم نخجوانی',
-      nationalCode: '0041160851',
       represent: 'شرکت سرمایه‌گذاری ملی ایران',
       position: 'عضو هیات مدیره(غیر موظف)',
       education: 'کارشناسی /اقتصاد بازرگانی',
@@ -36,7 +33,6 @@ function About() {
     },
     {
       name: 'فرزاد ترابی',
-      nationalCode: '0058259457',
       represent: 'شرکت پیوند تجارت آتیه ایرانیان',
       position: 'عضو هیات مدیره(غیر موظف)',
       education: 'کارشناسی ارشد	',
@@ -44,7 +40,6 @@ function About() {
     },
     {
       name: 'علی اکبر منتظری',
-      nationalCode: '2219345874',
       represent: 'بنیاد مستضعفان انقلاب اسلامی',
       position: 'عضو هیات مدیره(غیر موظف)',
       education: 'کارشناسی/ حسابداری',
@@ -165,7 +160,6 @@ function About() {
             <TableHeader>
               <TableRow>
                 <TableHead className="text-right">نام و نام خانوادگی</TableHead>
-                <TableHead className="text-right">کدملی</TableHead>
                 <TableHead className="text-right">نماینده</TableHead>
                 <TableHead className="text-right">سمت</TableHead>
                 <TableHead className="text-right">تحصیلات</TableHead>
@@ -174,9 +168,8 @@ function About() {
             </TableHeader>
             <TableBody>
               {HeadQuarterList.map((person) => (
-                <TableRow key={person.nationalCode}>
+                <TableRow key={person.name}>
                   <TableCell className="font-medium">{person.name}</TableCell>
-                  <TableCell>{person.nationalCode}</TableCell>
                   <TableCell>{person.represent}</TableCell>
                   <TableCell className="text-right">
                     {person.position}
@@ -210,7 +203,7 @@ function About() {
             </TableHeader>
             <TableBody>
               {AppointmentsCommitteeList.map((person) => (
-                <TableRow key={person.nationalCode}>
+                <TableRow key={person.name}>
                   <TableCell className="font-medium">{person.name}</TableCell>
 
                   <TableCell className="text-right">
@@ -243,7 +236,7 @@ function About() {
             </TableHeader>
             <TableBody>
               {RiskCommitteeList.map((person) => (
-                <TableRow key={person.nationalCode}>
+                <TableRow key={person.name}>
                   <TableCell className="font-medium">{person.name}</TableCell>
 
                   <TableCell className="text-right">
@@ -278,7 +271,7 @@ function About() {
             </TableHeader>
             <TableBody>
               {RiskCommitteeList.map((person) => (
-                <TableRow key={person.nationalCode}>
+                <TableRow key={person.name}>
                   <TableCell className="font-medium">{person.name}</TableCell>
 
                   <TableCell className="text-right">
