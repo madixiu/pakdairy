@@ -12,7 +12,7 @@ function Topbar() {
       href: "/",
     },
     {name: "محصولات",href:"/products"},
-    {name: "اخبار",href:"/#"},
+    {name: "اخبار",href:"/news"},
     // {name: "امور مجامع و سهام" , href:"#"},
     // {name: "حاکمیت شرکتی",href:"/corporate"},
     {name: "استخدام",href:"#"},

@@ -1,17 +1,23 @@
 // components/Footer.js
 
 import React from 'react';
-import { FaYoutube, FaWhatsapp, FaTwitter, FaInstagram,FaEnvelope } from 'react-icons/fa';
+import {
+  FaYoutube,
+  FaWhatsapp,
+  FaTwitter,
+  FaInstagram,
+  FaEnvelope,
+  FaPhone,
+} from 'react-icons/fa';
 import Image from 'next/image';
 
 function Footer() {
   return (
     <footer className="bg-white text-primary shadow-lg">
       <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
-        
         {/* Logo Section */}
         <div className="flex items-center justify-center md:justify-start">
-          <Image 
+          <Image
             src="/logo.png" // Replace with your logo path
             alt="Company Logo"
             width={100} // Adjust width as needed
@@ -49,18 +55,23 @@ function Footer() {
         {/* Contact Us Section */}
         <div>
           <h3 className="text-lg font-bold mb-4">ارتباط با ما</h3>
-          <span>
-          <FaEnvelope className="mr-2" /> {/* Email icon */}
-            <a href="mailto:info@example.com" className="hover:underline">
-              info@pakdairy.com
-            </a>
-          </span>
-          <p>
-            Phone:
-            <a href="tel:+1234567890" className="hover:underline">
-              +982164960000
-            </a>
-          </p>
+          <div className="flex flex-row items-center">
+            <span className="text-sm">
+              <a href="mailto:info@example.com" className="hover:underline">
+                info@pakdairy.com
+              </a>
+            </span>
+            <FaEnvelope className="mr-2" /> {/* Email icon */}
+          </div>
+          <div className="flex flex-row items-center mt-4">
+            <span className="text-sm">
+              Phone:
+              <a href="tel:+1234567890" className="hover:underline">
+                +982164960000
+              </a>
+            </span>
+            <FaPhone className="ms-2" />
+          </div>
         </div>
 
         {/* Social Networks Section */}
