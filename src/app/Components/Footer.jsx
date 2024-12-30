@@ -35,17 +35,17 @@ function Footer() {
               </a>
             </li>
             <li>
-              <a href="#about" className="hover:underline">
+              <a href="/about" className="hover:underline">
                 درباره شرکت
               </a>
             </li>
             <li>
-              <a href="#services" className="hover:underline">
+              <a href="/news" className="hover:underline">
                 اخبار
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:underline">
+              <a href="/contact" className="hover:underline">
                 ارتباط با ما
               </a>
             </li>
@@ -63,7 +63,7 @@ function Footer() {
             </span>
             <FaEnvelope className="mr-2" /> {/* Email icon */}
           </div>
-          <div className="flex flex-row items-center mt-4">
+          <div className="flex flex-row items-center mt-4 ">
             <span className="text-sm">
               Phone:
               <a href="tel:+1234567890" className="hover:underline">
