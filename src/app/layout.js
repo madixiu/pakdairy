@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
       >
 
         <Topbar /> {/* Render the Topbar */}
-        <main className="py-24 px-10 min-h-screen bg-slate-100">{children}</main> {/* Render the page content */}
+        <main className="py-24 min-h-screen bg-slate-100">{children}</main> {/* Render the page content */}
         <Footer />
       </body>
     </html>
