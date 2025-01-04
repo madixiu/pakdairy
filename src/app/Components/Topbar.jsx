@@ -15,7 +15,7 @@ function Topbar() {
     {name: "اخبار",href:"/news"},
     // {name: "امور مجامع و سهام" , href:"#"},
     // {name: "حاکمیت شرکتی",href:"/corporate"},
-    {name: "استخدام",href:"#"},
+    {name: "مزایده مناقصه",href:"#"},
 
     {
       name: "درباره شرکت",
