@@ -7,7 +7,7 @@ function News() {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/news/')
+    fetch('http://192.168.20.61:8000/api/news/')
       .then((response) => response.json())
       .then((data) => {
         console.log(data); // Log the data to check its structure
@@ -25,12 +25,15 @@ function News() {
               key={item.id}
               title={item.title}
               description={item.summary}
-              image={'http://localhost:8000/media/news_images/1.jpg'} // Assuming your API returns an image URL
+              image={'http://192.168.20.61:8000/media/news_images/1.jpg'} // Assuming your API returns an image URL
             />
           ))}
         </BentoGrid>
       ) : (
-        <p>Loading...</p>
+        <div className='flex justify-center items-center'>
+
+          <p>در حال بارگزاری</p>
+        </div>
       )}
     </div>
   );

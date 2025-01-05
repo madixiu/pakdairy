@@ -41,12 +41,12 @@ function ProductsCategory() {
       name: 'خامه',
       href: '#',
     },
-    {
-      id: 'caramel',
+    // {
+    //   id: 'caramel',
 
-      name: 'کارامل',
-      href: '#',
-    },
+    //   name: 'کارامل',
+    //   href: '#',
+    // },
   ];
   return (
     <div className=" mx-20 mt-10 h-32">
@@ -129,6 +129,7 @@ function ProductsCategory() {
                 width={32}
                 height={32}
                 objectFit="contain"
+
                 className="
                 w-10 
                 h-10

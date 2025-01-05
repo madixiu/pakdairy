@@ -31,25 +31,10 @@ const SlidingProducts = () => {
     }, [products.length]);
 
     return (
-        <div className="grid grid-cols-3 h-[90vh]">
-            {/* Left Part: Sliding Image */}
-            <div className="col-span-2 relative overflow-hidden">
-                {products.map((product, index) => (
-                    <Image
-                        key={index}
-                        src={product.image}
-                        alt={product.name}
-                        layout="fill"
-                        objectFit="cover"
-                        className={`absolute transition-opacity duration-1000 ${
-                            index === currentIndex ? "opacity-100" : "opacity-0"
-                        }`}
-                    />
-                ))}
-            </div>
+        <div className="grid lg:grid-cols-3 grid-cols-1 lg:h-[90vh] h-[50vh] shadow-sm">
 
             {/* Right Part: Text Description */}
-            <div className="col-span-1 flex items-center justify-center bg-white p-8">
+            <div className="col-span-1 flex items-center justify-center bg-white p-8 rounded-lg">
                 <div className="text-center">
                     <h1
                         key={`title-${currentIndex}`}
@@ -68,6 +53,21 @@ const SlidingProducts = () => {
                         {products[currentIndex].description}
                     </p>
                 </div>
+            </div>
+            {/* Left Part: Sliding Image */}
+            <div className="col-span-2 relative overflow-hidden">
+                {products.map((product, index) => (
+                    <Image
+                        key={index}
+                        src={product.image}
+                        alt={product.name}
+                        layout="fill"
+                        objectFit="cover"
+                        className={`absolute transition-opacity duration-1000 ${
+                            index === currentIndex ? "opacity-100" : "opacity-0"
+                        }`}
+                    />
+                ))}
             </div>
         </div>
     );

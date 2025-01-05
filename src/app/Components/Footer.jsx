@@ -64,9 +64,8 @@ function Footer() {
             <FaEnvelope className="mr-2" /> {/* Email icon */}
           </div>
           <div className="flex flex-row items-center mt-4 ">
-            <span className="text-sm">
-              Phone:
-              <a href="tel:+1234567890" className="hover:underline">
+            <span className="text-sm" dir='ltr'>
+              <a href="tel:+982164960000" className="hover:underline">
                 +982164960000
               </a>
             </span>

@@ -15,7 +15,7 @@ export const BentoGrid = ({ className, children }) => {
 
 export const BentoGridItem = ({ title, description, image }) => {
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg transition-transform transform hover:scale-105">
+    <div className="relative overflow-hidden rounded-lg shadow-lg transition-transform transform hover:scale-105 cursor-pointer">
       <div className="h-48 bg-gray-200 relative"> {/* Fixed height for the image */}
         {image && (
           <Image
