@@ -9,7 +9,6 @@ function News() {
   const [news, setNews] = useState([]);
   const router = useRouter(); // Initialize useRouter
 
-  const 
   useEffect(() => {
     fetch('http://192.168.20.61:8000/api/news/')
       .then((response) => response.json())
