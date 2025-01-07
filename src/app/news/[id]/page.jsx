@@ -1,7 +1,7 @@
 import { apiUrl } from '@/lib/api';
 import parse from 'html-react-parser';
 import Image from 'next/image';
-export default async function Page({ params }) {
+export default async function NewsDetail({ params }) {
   const id = (await params).id;
   // const data = await fetch('https://api.vercel.app/blog')
   // const post = await data.json()
