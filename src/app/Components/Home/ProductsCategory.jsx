@@ -57,7 +57,7 @@ function ProductsCategory() {
 
   const handleCategoryClick = (id) => {
     // Handle the click event for the category
-    router.push(`/products/${id}`); // Navigate to the news detail page
+    router.push(`/products/category/${id}`); // Navigate to the news detail page
     console.log(`Clicked on category: ${id}`);
     // You can also navigate to category.href or perform other actions here
   };
