@@ -144,7 +144,7 @@ function About() {
             درباره شرکت
           </h2>
           <div className="m-5 p-5 rounded-lg">
-            <span className="text-justify leading-8 text-white">
+            <span className="text-left leading-10 text-white">
               {aboutUStext}
             </span>
           </div>
