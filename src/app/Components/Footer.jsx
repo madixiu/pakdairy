@@ -10,7 +10,7 @@ import {
   FaPhone,
 } from 'react-icons/fa';
 import Image from 'next/image';
-
+import Link from 'next/link';
 function Footer() {
   return (
     <footer className="bg-white text-primary shadow-lg">
@@ -24,34 +24,32 @@ function Footer() {
             height={100} // Adjust height as needed
           />
         </div>
-
         {/* Quick Access Section */}
         <div>
-          <h3 className="text-lg font-bold mb-4">دسترسی سریع</h3>
-          <ul className="space-y-2">
-            <li>
-              <a href="/home" className="hover:underline">
-                خانه
-              </a>
-            </li>
-            <li>
-              <a href="/about" className="hover:underline">
-                درباره شرکت
-              </a>
-            </li>
-            <li>
-              <a href="/news" className="hover:underline">
-                اخبار
-              </a>
-            </li>
-            <li>
-              <a href="/contact" className="hover:underline">
-                ارتباط با ما
-              </a>
-            </li>
-          </ul>
-        </div>
-
+  <h3 className="text-lg font-bold mb-4">دسترسی سریع</h3>
+  <ul className="space-y-2">
+    <li>
+      <Link href="/" className="hover:underline">
+        خانه
+      </Link>
+    </li>
+    <li>
+      <Link href="/about" className="hover:underline">
+        درباره شرکت
+      </Link>
+    </li>
+    <li>
+      <Link href="/news" className="hover:underline">
+        اخبار
+      </Link>
+    </li>
+    <li>
+      <Link href="/contact" className="hover:underline">
+        ارتباط با ما
+      </Link>
+    </li>
+  </ul>
+</div>
         {/* Contact Us Section */}
         <div>
           <h3 className="text-lg font-bold mb-4">ارتباط با ما</h3>
@@ -64,7 +62,7 @@ function Footer() {
             <FaEnvelope className="mr-2" /> {/* Email icon */}
           </div>
           <div className="flex flex-row items-center mt-4 ">
-            <span className="text-sm" dir='ltr'>
+            <span className="text-sm" dir="ltr">
               <a href="tel:+982164960000" className="hover:underline">
                 +982164960000
               </a>
@@ -72,7 +70,6 @@ function Footer() {
             <FaPhone className="ms-2" />
           </div>
         </div>
-
         {/* Social Networks Section */}
         <div>
           <h3 className="text-lg font-bold mb-1">ما را دنبال کنید</h3>

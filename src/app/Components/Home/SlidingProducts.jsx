@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const SlidingProducts = () => {
     const products = [
-        { name: "ماست پروبیوتیک", description: "Rich and creamy with a delicate texture.", image: "/decorative1.png" },
+        { name: "ماست پروبیوتیک", description: "", image: "/decorative1.png" },
         { name: "ماست گلدن ", description: "همزده پرچرب", image: "/decorative2.png" },
         { name: "شیر بدون لاکتوز", description: "پاستوریزه کم چرب", image: "/decorative3.png" },
         { name: "کره", description: "", image: "/decorative4.png" },
