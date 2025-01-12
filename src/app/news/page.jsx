@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'; // Import useRouter
 import { Card } from '@/components/ui/card';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 import { apiUrl } from '@/lib/api';
+import { fallbackImage } from '@/lib/constant';
 function News() {
   const [news, setNews] = useState([]);
   const router = useRouter(); // Initialize useRouter
@@ -34,7 +35,7 @@ function News() {
               key={item.id}
               title={item.title}
               description={item.summary}
-              image={item?.image ? item.image : apiUrl('/media/news_images/1.jpg') } // Assuming your API returns an image URL
+              image={item?.image ? item.image : fallbackImage} // Assuming your API returns an image URL
               onClick={() => handleNewsClick(item.id)} // Add onClick handler
             />
           ))}

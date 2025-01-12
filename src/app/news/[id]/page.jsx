@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { apiUrl } from '@/lib/api';
 import parse from 'html-react-parser';
 import Image from 'next/image';
-
+import { fallbackImage } from '@/lib/constant';
 export default async function NewsDetail({ params }) {
   const id = (await params).id;
 
@@ -23,11 +23,11 @@ export default async function NewsDetail({ params }) {
   const lastNews = await fetchLastNews();
 
   // Fallback image URL
-  const fallbackImage = '/path/to/nophoto.jpg'; // Replace with the actual path to your fallback image
+  // const fallbackImage = '/nophoto.jpg'; // Replace with the actual path to your fallback image
 
   return (
     <div className="">
-      <div className="grid grid-cols-6 p-5">
+      <div className="grid grid-cols-6 p-10 mt-10 ">
         <div className="col-span-1">
           <div className="">
             <span className="text-sm">آخرین اخبار</span>
@@ -49,9 +49,38 @@ export default async function NewsDetail({ params }) {
               </Link>
             ))}
         </div>
-        <div className="col-span-5 flex flex-col items-center">
-          <h1>{data.title}</h1>
-          <p>{data.summary}</p>
+        <div className="col-span-5 flex flex-col items-center px-10">
+          <div className="flex flex-row w-full items-center">
+            <div className="block bg-[#e1e1e1] h-[1px] w-full"></div>
+            <div className="px-7">
+              <span>Date</span>
+            </div>
+          </div>
+          <div className="flex flex-row self-start w-full">
+            <div className='w-[40%] h-[200px]'>
+              <Image
+                src={data.image ? data.image : fallbackImage}
+                alt={data.title}
+                width={470}
+                height={250}
+              />
+            </div>
+            <div className="w-full">
+              <div className="p-5 w-full">
+                <span className="font-bold text-lg">{data.title}</span>
+              </div>
+              <div className="px-5 w-full">
+                <span className="text-sm text-gray-800">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+                  delectus id eaque iusto ex cum dignissimos libero repudiandae
+                  illo, quas officiis minus facere aut consequatur asperiores,
+                  dolorem soluta quisquam quidem?
+                </span>
+              </div>
+            </div>
+          </div>
+          {/* <h1 className='font-bold '>{data.title}</h1>
+          <p>{data.summary}</p> */}
           <div>{parse(data.content)}</div>
         </div>
       </div>

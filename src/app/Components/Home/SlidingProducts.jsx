@@ -59,8 +59,8 @@ const SlidingProducts = () => {
                 {products.map((product, index) => (
                     <Image
                         key={index}
-                        src={product.image}
-                        alt={product.name}
+                        src={product.image ? product.image : "/decorative1.png"}
+                        alt={product.name? product.name : "Product Image"}
                         layout="fill"
                         objectFit="cover"
                         className={`absolute transition-opacity duration-1000 ${

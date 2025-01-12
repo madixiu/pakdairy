@@ -58,7 +58,7 @@ function ProductsCategory() {
   const handleCategoryClick = (id) => {
     // Handle the click event for the category
     router.push(`/products/category/${id}`); // Navigate to the news detail page
-    console.log(`Clicked on category: ${id}`);
+    // console.log(`Clicked on category: ${id}`);
     // You can also navigate to category.href or perform other actions here
   };
 
@@ -68,7 +68,7 @@ function ProductsCategory() {
       <div className="flex justify-center items-center h-full rounded-lg">
         {categories.map((category) => (
           <div
-            key={category.name}
+            key={category.id}
             className="
               relative 
               flex 
@@ -78,7 +78,7 @@ function ProductsCategory() {
               justify-center 
               group 
               cursor-pointer 
-              overflow-hidden      id: 'cream',
+              overflow-hidden   
 
               transition-all 
               duration-200 
@@ -140,7 +140,6 @@ function ProductsCategory() {
               <Image
                 src={`/svg/categories/${category.svg}.svg`}
                 alt={category.name}
-                name
                 width={32}
                 height={32}
                 objectFit="contain"
