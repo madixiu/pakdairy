@@ -27,13 +27,10 @@ export default function CategoryProductListClient({ data }) {
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
-  const handleProductClick = (group) => {
+  const handleProductClick = (id,group) => {
     console.log(group);
-    router.push(`/product/${group}`);
-    // router.push({
-    //   pathname: `/product/${group}`,
-    //   query: { data: additionalData },
-    // });
+    router.push(`/product/${id}-${group}`);
+
   };
   return (
     <div>
@@ -89,7 +86,7 @@ export default function CategoryProductListClient({ data }) {
             <div
               key={index}
               className="flex flex-col items-center justify-center aspect-square border m-2 shadow-sm rounded-xl border-slate-200 overflow-hidden hover:cursor-pointer hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out"
-              onClick={() => handleProductClick(item.group)}
+              onClick={() => handleProductClick(item.category_id,item.group)}
             >
               <div className="relative w-[70%] h-[70%]">
                 <Image
