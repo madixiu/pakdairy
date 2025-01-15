@@ -2,7 +2,7 @@
 import { useParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { apiUrl } from '@/lib/api';
-
+import Image from 'next/image';
 function Product() {
   const params = useParams();
   const group = decodeURIComponent(params.group);
@@ -18,10 +18,12 @@ function Product() {
         const response = await fetch(apiUrl(`/api/products/category/${id}/`));
         const result = await response.json();
         const responseData = result.products || [];
-        
+
         // Filter the data based on the group name
-        const filteredData = responseData.filter((item) => item.group === groupName);
-        
+        const filteredData = responseData.filter(
+          (item) => item.group === groupName
+        );
+
         // If filteredData is not empty, set the products array
         if (filteredData.length > 0) {
           setData(filteredData[0].products); // Access the products array of the first filtered item
@@ -47,7 +49,45 @@ function Product() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="container">
+    <div className="">
+      <div className="flex justify-center bg-white w-full">
+        <div className="grid grid-cols-3 max-w-[80%] h-[75vh] w-full">
+          <div className="flex justify-center items-center border-r col-span-2 border-slate-200 h-full relative">
+            <div className="relative w-[50%] h-[80%] flex items-center justify-center">
+              <Image
+                src={'/drop.png'}
+                className="opacity-30"
+                alt={'drop'}
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+              <div className="relative w-[70%] h-[80%]">
+                {/* <Image
+                        src={ImgUrl(data.category.image)}
+                        alt={data.category.title}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                      /> */}
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center border-x border-slate-300 shadow-sm relative h-full"></div>
+        </div>
+      </div>
+      <div className='flex flex-row justify-between items-center'>
+        <div className='flex flex-1 items-center justify-center bg-red-300'>
+          
+        </div>
+        <div className='flex flex-1 items-center justify-center bg-red-300'>exp</div>
+        <div className='flex flex-1 items-center justify-center bg-red-300'>exp</div>
+        <div className='flex flex-1 items-center justify-center bg-red-300'>exp</div>
+        <div className='flex flex-1 items-center justify-center bg-red-300'>exp</div>
+        <div className='flex flex-1 items-center justify-center bg-red-300'>exp</div>
+        <div className='flex flex-1 items-center justify-center bg-red-300'>exp</div>
+        
+
+
+      </div>
       <h1>Product Group: {groupName}</h1>
       {data && data.length > 0 ? (
         data.map((item) => (
