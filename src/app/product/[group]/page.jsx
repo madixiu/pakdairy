@@ -2,7 +2,7 @@
 import { useParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { apiUrl } from '@/lib/api';
-import Image from 'next/image';
+import Details from './DetailsComponent';
 function Product() {
   const params = useParams();
   const group = decodeURIComponent(params.group);
@@ -98,6 +98,7 @@ function Product() {
       ) : (
         <p>No products found in this group.</p>
       )}
+      <Details />
     </div>
   );
 }
