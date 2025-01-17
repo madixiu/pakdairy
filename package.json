@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev --turbopack",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -26,6 +26,7 @@
     "yarn": "^1.22.22"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
     "postcss": "^8",

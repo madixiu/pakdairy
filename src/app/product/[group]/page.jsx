@@ -3,6 +3,7 @@ import { useParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { apiUrl } from '@/lib/api';
 import Details from './DetailsComponent';
+import Image from 'next/image'; 
 function Product() {
   const params = useParams();
   const group = decodeURIComponent(params.group);
