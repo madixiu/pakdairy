@@ -1,5 +1,4 @@
 export default function Details() {
-  console.log(ButterIcon);
 
   return (
     <div className="flex flex-row flex-1 items-center justify-center">
@@ -15,7 +14,7 @@ export default function Details() {
           >
             <g
               fill="currentColor"
-              className="text-blue-400 hover:text-red-400 hover:cursor-pointer"
+              className="text-blue-400 hover:text-red-400 hover:cursor-pointer transition-all duration-500 ease-in-out"
               stroke="currentColor"
               transform="translate(0.000000,600.000000) scale(0.100000,-0.100000)"
             >
