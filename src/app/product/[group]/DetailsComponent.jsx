@@ -1,9 +1,12 @@
-export default function Details() {
+import { FaRegClock } from 'react-icons/fa';
 
+export default function Details() {
   return (
     <div className="flex flex-row flex-1 items-center justify-center">
       <div className="flex flex-row flex-1 justify-center items-center px-10">
         <div className="flex items-center justify-center bg-red-100 aspect-square w-[10%] border">
+          <FaRegClock className="text-red-500 text-2xl" />
+          <span className="text-gray-700">Expires on: 2025-01-20</span>
           <svg
             preserveAspectRatio="xMidYMid meet"
             version="1.0"
