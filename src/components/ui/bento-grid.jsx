@@ -29,7 +29,7 @@ export const BentoGridItem = ({ title, description, image,onClick }) => {
       </div>
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-70 transition-transform transform translate-y-0">
         <h3 className="text-xs font-semibold">{title}</h3>
-        <span className="text-sm">{description}</span>
+        {/* <span className="text-sm">{description}</span> */}
       </div>
     </div>
   );

@@ -57,12 +57,14 @@ export default async function NewsDetail({ params }) {
             </div>
           </div>
           <div className="flex flex-row self-start w-full">
-            <div className='w-[40%] h-[200px]'>
+            <div className='w-[40%] h-full'>
               <Image
                 src={data.image ? data.image : fallbackImage}
                 alt={data.title}
                 width={470}
-                height={250}
+                height={200}
+                className="object-cover h-full w-full" // Add these classes
+
               />
             </div>
             <div className="w-full">
@@ -71,17 +73,14 @@ export default async function NewsDetail({ params }) {
               </div>
               <div className="px-5 w-full">
                 <span className="text-sm text-gray-800">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                  delectus id eaque iusto ex cum dignissimos libero repudiandae
-                  illo, quas officiis minus facere aut consequatur asperiores,
-                  dolorem soluta quisquam quidem?
+                  {data.summary}
                 </span>
               </div>
             </div>
           </div>
           {/* <h1 className='font-bold '>{data.title}</h1>
           <p>{data.summary}</p> */}
-          <div>{parse(data.content)}</div>
+          <div className='flex '>{parse(data.content)}</div>
         </div>
       </div>
     </div>

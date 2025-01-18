@@ -72,23 +72,15 @@ function Product() {
               </div>
             </div>
           </div>
-          <div className="flex justify-center border-x border-slate-300 shadow-sm relative h-full"></div>
+          <div className="flex justify-start border-x border-slate-300 shadow-sm relative h-full">
+            <div className=''></div>
+          </div>
         </div>
       </div>
-      <div className='flex flex-row justify-between items-center'>
-        <div className='flex flex-1 items-center justify-center bg-red-300'>
-          
-        </div>
-        <div className='flex flex-1 items-center justify-center bg-red-300'>exp</div>
-        <div className='flex flex-1 items-center justify-center bg-red-300'>exp</div>
-        <div className='flex flex-1 items-center justify-center bg-red-300'>exp</div>
-        <div className='flex flex-1 items-center justify-center bg-red-300'>exp</div>
-        <div className='flex flex-1 items-center justify-center bg-red-300'>exp</div>
-        <div className='flex flex-1 items-center justify-center bg-red-300'>exp</div>
-        
-
-
+      <div className='my-16'>
+        <Details />
       </div>
+
       <h1>Product Group: {groupName}</h1>
       {data && data.length > 0 ? (
         data.map((item) => (
@@ -99,7 +91,6 @@ function Product() {
       ) : (
         <p>No products found in this group.</p>
       )}
-      <Details />
     </div>
   );
 }

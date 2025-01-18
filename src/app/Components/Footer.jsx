@@ -55,7 +55,7 @@ function Footer() {
           <h3 className="text-lg font-bold mb-4">ارتباط با ما</h3>
           <div className="flex flex-row items-center">
             <span className="text-sm">
-              <a href="mailto:info@example.com" className="hover:underline">
+              <a href="mailto:info@pakdairy.com" className="hover:underline">
                 info@pakdairy.com
               </a>
             </span>
