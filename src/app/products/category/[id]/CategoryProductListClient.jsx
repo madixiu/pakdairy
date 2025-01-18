@@ -86,12 +86,12 @@ console.log(currentItems);
           {currentItems.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center aspect-square border m-2 shadow-sm rounded-xl border-slate-200 overflow-hidden hover:cursor-pointer hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out"
+              className="flex flex-col bg-slate-100 items-center justify-center aspect-square border m-2 shadow-sm rounded-xl border-slate-200 overflow-hidden hover:cursor-pointer hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out"
               onClick={() => handleProductClick(item.category_id,item.group)}
             >
               <div className="relative w-[70%] h-[70%]">
                 <Image
-                  src={item.products[0].image ? (item.products[0].image) : fallbackImage}
+                  src={item.group_image ? (item.group_image) : fallbackImage}
                   alt={data.category.title}
                   fill
                   style={{ objectFit: 'cover' }}

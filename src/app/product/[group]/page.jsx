@@ -3,7 +3,8 @@ import { useParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { apiUrl } from '@/lib/api';
 import Details from './DetailsComponent';
-import Image from 'next/image'; 
+import Image from 'next/image';
+import { fallbackImage } from '@/lib/constant';
 function Product() {
   const params = useParams();
   const group = decodeURIComponent(params.group);
@@ -12,6 +13,18 @@ function Product() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedWeightIndex, setSelectedWeightIndex] = useState(0);
+  const [imageKey, setImageKey] = useState(0); // For forcing re-render during animation
+  const [direction, setDirection] = useState('right'); // Track slide direction
+
+  const handleWeightChange = (index) => {
+    if (index > selectedWeightIndex) {
+      setDirection('right'); // Slide to the right
+    } else {
+      setDirection('left'); // Slide to the left
+    }
+    setSelectedWeightIndex(index);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,6 +59,11 @@ function Product() {
     fetchData();
   }, [id, groupName]);
 
+  // useEffect(() => {
+  //   // Trigger re-render for the fade-in effect
+  //   setImageKey((prevKey) => prevKey + 1);
+  // }, [selectedWeightIndex]);
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
@@ -62,36 +80,92 @@ function Product() {
                 fill
                 style={{ objectFit: 'cover' }}
               />
-              <div className="relative w-[70%] h-[80%]">
-                {/* <Image
-                        src={ImgUrl(data.category.image)}
-                        alt={data.category.title}
-                        fill
-                        style={{ objectFit: 'cover' }}
-                      /> */}
+              <div className="relative w-[500px] h-[500px] overflow-hidden">
+                <div className="relative w-full h-full">
+                  {data.map((item, index) => (
+                    <Image
+                      key={index}
+                      src={item.image || fallbackImage}
+                      alt={item.weight_volume}
+                      fill
+                      className={`absolute top-0 left-0 w-full h-full transition-transform duration-500 ${
+                        selectedWeightIndex === index
+                          ? 'translate-x-0 z-10'
+                          : direction === 'right'
+                          ? 'translate-x-full'
+                          : '-translate-x-full'
+                      }`}
+                      style={{ objectFit: 'cover' }}
+                    />
+                  ))}
+                </div>
+                <div className="flex mt-4 gap-2">
+                  {data.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleWeightChange(index)}
+                      className={`px-4 py-2 rounded ${
+                        selectedWeightIndex === index
+                          ? 'bg-blue-500 text-white'
+                          : 'bg-gray-200'
+                      }`}
+                    >
+                      {index + 1}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
           <div className="flex justify-start border-x border-slate-300 shadow-sm relative h-full">
-            <div className='flex flex-col p-7 w-full'>
-              <div className='flex flex-row gap-2'>
-                <span className='text-black font-bold'>{data[0].category}</span>
-                <span className='text-primary font-bold'>{groupName}</span>
+            <div className="flex flex-col p-7 w-full mt-20 h-full">
+              <div className="flex flex-row gap-2">
+                <span className="text-black font-bold">{data[0].category}</span>
+                <span className="text-primary font-bold">{groupName}</span>
               </div>
-              <div className='flex flex-col gap-2 w-20'>
-                <div className='flex justify-center px-10 py-1 rounded-xl border-2 border-primary text-center hover:cursor-pointer hover:bg-slate-200 hover:border-blue-500  transition-all duration-500 ease-in-out'>
-                  <span className='text-sm'>وزن</span>
+
+              {/* Main weight section */}
+              <div className="flex flex-col gap-2 mt-10 max-w-48">
+                <div>
+                  <span>وزن</span>
+                </div>
+
+                {/* List of weights with scroll */}
+                <div className="flex flex-col w-full overflow-y-auto overflow-x-hidden gap-2 max-h-[600px]">
+                  {data.map((item, index) => (
+                    item.weight_volume &&
+                    <div
+                      key={index}
+                      onClick={() => setSelectedWeightIndex(index)}
+                      className={`flex justify-center py-3   rounded-xl border-2 text-center hover:cursor-pointer hover:opacity-80 transition-all duration-400 ease-in-out ${
+                        selectedWeightIndex === index
+                          ? 'border-blue-400 bg-primary text-white'
+                          : 'border-primary'
+                      }`}
+                    >
+                      <span
+                        className={`text-sm whitespace-nowrap ${
+                          selectedWeightIndex === index
+                            ? 'text-white'
+                            : 'text-primary'
+                        }`}
+                      >
+                        {item.weight_volume}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className='my-16'>
+      <div className="my-16">
         <Details />
       </div>
 
       <h1>Product Group: {groupName}</h1>
+      <h2>{data[selectedWeightIndex].image}</h2>
       {data && data.length > 0 ? (
         data.map((item) => (
           <div key={item.product_name}>
