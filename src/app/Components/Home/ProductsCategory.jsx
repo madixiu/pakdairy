@@ -63,7 +63,7 @@ function ProductsCategory() {
   };
 
   return (
-    <div className="mx-20 mt-10 h-32">
+    <div className="flex flex-col mx-20 mt-10 h-52">
       <h2 className="text-2xl font-bold text-right mb-10">محصولات</h2>
       <div className="flex justify-center items-center h-full rounded-lg">
         {categories.map((category) => (
@@ -84,6 +84,7 @@ function ProductsCategory() {
               duration-200 
               ease-in-out
               rounded-lg
+              
             "
             onClick={() => handleCategoryClick(category.id)} // Move onClick here
           >

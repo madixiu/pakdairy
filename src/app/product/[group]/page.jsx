@@ -73,7 +73,17 @@ function Product() {
             </div>
           </div>
           <div className="flex justify-start border-x border-slate-300 shadow-sm relative h-full">
-            <div className=''></div>
+            <div className='flex flex-col p-7 w-full'>
+              <div className='flex flex-row gap-2'>
+                <span className='text-black font-bold'>{data[0].category}</span>
+                <span className='text-primary font-bold'>{groupName}</span>
+              </div>
+              <div className='flex flex-col gap-2 w-20'>
+                <div className='flex justify-center px-10 py-1 rounded-xl border-2 border-primary text-center hover:cursor-pointer hover:bg-slate-200 hover:border-blue-500  transition-all duration-500 ease-in-out'>
+                  <span className='text-sm'>وزن</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

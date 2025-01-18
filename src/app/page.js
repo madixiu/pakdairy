@@ -14,7 +14,7 @@ export default function Home() {
   });
   
   return (
-    <div className="space-y-16 p-8">
+    <div className="flex flex-col py-2">
       {/* Sliding Products Section */}
       <div>
         <SlidingProducts />
@@ -25,6 +25,9 @@ export default function Home() {
         <ProductsCategory categories={CategoryData} />
       </div>
 
+      <div className='py-10'>
+        here
+      </div>
       {/* Description Component Section */}
       <div>
         <DescriptionComponent />

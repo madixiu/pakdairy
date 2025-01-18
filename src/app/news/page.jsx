@@ -29,8 +29,9 @@ function News() {
   return (
     <div className='mt-10'>
       {news.length > 0 ? (
-        <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
+        <BentoGrid className="w-full mx-auto md:auto-rows-[20rem] px-28">
           {news.map((item) => (
+            item.active &&
             <BentoGridItem
               key={item.id}
               title={item.title}
@@ -42,7 +43,7 @@ function News() {
         </BentoGrid>
       ) : (
         <div className='flex justify-center items-center'>
-          <p>در حال بارگزاری</p>
+          <p>در حال بارگذاری</p>
         </div>
       )}
     </div>

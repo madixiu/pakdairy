@@ -23,6 +23,7 @@ export default function CategoryProductListClient({ data }) {
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
+console.log(currentItems);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -90,10 +91,11 @@ export default function CategoryProductListClient({ data }) {
             >
               <div className="relative w-[70%] h-[70%]">
                 <Image
-                  src={item.image ? ImgUrl(item.image) : fallbackImage}
+                  src={item.products[0].image ? (item.products[0].image) : fallbackImage}
                   alt={data.category.title}
                   fill
                   style={{ objectFit: 'cover' }}
+                  className=''
                 />
               </div>
               <div className="flex flex-row">

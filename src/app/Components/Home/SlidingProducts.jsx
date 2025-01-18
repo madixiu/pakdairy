@@ -37,9 +37,9 @@ const SlidingProducts = () => {
   }, [products.length]);
 
   return (
-    <div className="grid lg:grid-cols-3 grid-cols-1 lg:h-[90vh] h-[50vh] shadow-sm rounded-3xl">
+    <div className="grid lg:grid-cols-3 grid-cols-1 lg:h-[90vh] h-[50vh] shadow-sm">
       {/* Right Part: Text Description */}
-      <div className="col-span-1 flex items-center justify-center bg-white p-8 rounded-r-3xl shadow">
+      <div className="col-span-1 flex items-center justify-center bg-white p-8 shadow">
         <div className="text-center">
           <h1
             key={`title-${currentIndex}`}
@@ -68,7 +68,7 @@ const SlidingProducts = () => {
         </div>
       </div>
       {/* Left Part: Sliding Image */}
-      <div className="col-span-2 relative overflow-hidden shadow-md rounded-e-3xl">
+      <div className="col-span-2 relative overflow-hidden shadow-md">
         {products.map((product, index) => (
           <Image
             key={index}
@@ -76,7 +76,7 @@ const SlidingProducts = () => {
             alt={product.name ? product.name : 'Product Image'}
             layout="fill"
             objectFit="cover"
-            className={`absolute transition-opacity duration-1000 rounded-l-3xl ${
+            className={`absolute transition-opacity duration-1000 ${
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
           />
