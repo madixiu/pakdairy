@@ -11,10 +11,11 @@ function Product() {
   const [id, ...stringParts] = group.split('-');
   const groupName = stringParts[0]; // Renamed to avoid overwriting
   const [data, setData] = useState([]);
+  const [relatedProducts, setRelatedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedWeightIndex, setSelectedWeightIndex] = useState(0);
-  const [imageKey, setImageKey] = useState(0); // For forcing re-render during animation
+  // const [imageKey, setImageKey] = useState(0); // For forcing re-render during animation
   const [direction, setDirection] = useState('right'); // Track slide direction
 
   const handleWeightChange = (index) => {
@@ -32,7 +33,10 @@ function Product() {
         const response = await fetch(apiUrl(`/api/products/category/${id}/`));
         const result = await response.json();
         const responseData = result.products || [];
-
+        // const responseData2 = result.relative_products || [];
+        console.log('===========ORIGINAL===================');
+        console.log(responseData);
+        
         // Filter the data based on the group name
         const filteredData = responseData.filter(
           (item) => item.group === groupName
@@ -41,6 +45,7 @@ function Product() {
         // If filteredData is not empty, set the products array
         if (filteredData.length > 0) {
           setData(filteredData[0].products); // Access the products array of the first filtered item
+          setRelatedProducts(filteredData[0].relative_products); // Access the products array of the first filtered item)
         } else {
           setData([]); // Set to empty array if no products found
         }
@@ -131,7 +136,7 @@ function Product() {
                 </div>
 
                 {/* List of weights with scroll */}
-                <div className="flex flex-col w-full overflow-y-auto overflow-x-hidden gap-2 max-h-[600px]">
+                <div className="flex flex-col w-full overflow-y-auto overflow-x-hidden gap-2 max-h-[400px]">
                   {data.map((item, index) => (
                     item.weight_volume &&
                     <div
@@ -163,7 +168,7 @@ function Product() {
       <div className="my-16">
         <Details />
       </div>
-
+    
       <h1>Product Group: {groupName}</h1>
       <h2>{data[selectedWeightIndex].image}</h2>
       {data && data.length > 0 ? (
