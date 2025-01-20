@@ -12,7 +12,7 @@ function Products() {
     {id: 2 , name: 'Yogurt',persianName: 'ماست', image: '/images/productsCategories/yogurt.png' },
     {id:3  , name: 'Cream',persianName: 'خامه', image: '/images/productsCategories/cream.png' },
     {id: 8 , name: 'Ice Cream',persianName: 'بستنی', image: '/images/productsCategories/icecream.png' },
-    { id: 9 ,name: 'Dessert',persianName: 'دسر', image: '/images/productsCategories/dessert.png' },
+    // { id: 9 ,name: 'Dessert',persianName: 'دسر', image: '/images/productsCategories/dessert.png' },
   ];
 
   const handleCategoryClick = (id) => {

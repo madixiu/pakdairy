@@ -3,7 +3,7 @@ import Image from "next/image";
 import CategoryProductListClient from "./CategoryProductListClient";
 
 export default async function CategoryProductList({ params }) {
-  const { id } = params;
+  const { id } = await params;
 
   try {
     const response = await fetch(apiUrl(`/api/products/category/${id}/`));

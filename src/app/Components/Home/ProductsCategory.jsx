@@ -63,7 +63,7 @@ function ProductsCategory() {
   };
 
   return (
-    <div className="flex flex-col mx-20 mt-10 h-52">
+    <div className="flex flex-col h-52">
       <h2 className="text-2xl font-bold text-right mb-10">محصولات</h2>
       <div className="flex justify-center items-center h-full rounded-lg">
         {categories.map((category) => (

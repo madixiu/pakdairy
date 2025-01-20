@@ -98,7 +98,7 @@ console.log(currentItems);
                   className=''
                 />
               </div>
-              <div className="flex flex-row">
+              <div className="flex flex-row mt-2">
                 <span className="me-1">{item.products[0]?.category || ''}</span>
                 <span>{item.group || ''}</span>
               </div>

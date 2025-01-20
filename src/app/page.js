@@ -1,6 +1,7 @@
 import SlidingProducts from './Components/Home/SlidingProducts';
 import ProductsCategory from './Components/Home/ProductsCategory';
 import DescriptionComponent from './Components/Home/DescriptionComponent';
+import NewProducts from './Components/Home/NewProducts';
 import { apiUrl } from '@/lib/api';
 export default function Home() {
   const CategoryData = fetch(apiUrl('/api/category/'))
@@ -21,12 +22,12 @@ export default function Home() {
       </div>
 
       {/* Products Category Section */}
-      <div>
+      <div className='mx-20 my-20'>
         <ProductsCategory categories={CategoryData} />
       </div>
 
-      <div className='py-10'>
-        here
+      <div className='mx-20 my-20'>
+        <NewProducts />
       </div>
       {/* Description Component Section */}
       <div>

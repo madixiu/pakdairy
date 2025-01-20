@@ -29,7 +29,7 @@ function News() {
   return (
     <div className='mt-10'>
       {news.length > 0 ? (
-        <BentoGrid className="w-full mx-auto md:auto-rows-[20rem] px-28">
+        <BentoGrid className="w-full mx-auto md:auto-rows-[20rem] md:px-28 px-10">
           {news.map((item) => (
             item.active &&
             <BentoGridItem

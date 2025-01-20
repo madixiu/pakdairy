@@ -128,7 +128,7 @@ function Product() {
               </div>
             </div>
           </div>
-          <div className="flex justify-start border-x border-slate-300 shadow-sm relative h-full">
+          <div className="flex justify-start border-x border-slate-200 shadow-sm relative h-full">
             <div className="flex flex-col p-7 w-full mt-20 h-full">
               <div className="flex flex-row gap-2">
                 <span className="text-black font-bold">{data[0].category}</span>
@@ -142,7 +142,7 @@ function Product() {
                 </div>
 
                 {/* List of weights with scroll */}
-                <div className="flex flex-col w-full overflow-y-auto overflow-x-hidden gap-2 max-h-[400px]">
+                <div className="flex flex-col w-full overflow-y-auto overflow-x-hidden gap-2 max-h-[400px] custom-scrollbar">
                   {data.map(
                     (item, index) =>
                       item.weight_volume && (
@@ -197,7 +197,7 @@ function Product() {
                   className=""
                 />
               </div>
-              <div className="flex flex-row">
+              <div className="flex flex-row mt-2">
                 <span className="me-1">{item.category || ''}</span>
                 <span>{item.group || ''}</span>
               </div>
@@ -205,7 +205,7 @@ function Product() {
           ))}
         </div>
       </div>
-      <h1>Product Group: {groupName}</h1>
+      {/* <h1>Product Group: {groupName}</h1>
       <h2>{data[selectedWeightIndex].image}</h2>
       {data && data.length > 0 ? (
         data.map((item) => (
@@ -215,7 +215,7 @@ function Product() {
         ))
       ) : (
         <p>No products found in this group.</p>
-      )}
+      )} */}
     </div>
   );
 }
