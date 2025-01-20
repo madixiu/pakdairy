@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      fontSize: {
+        'xxs': '0.625rem',
+      },
       fontFamily: {
         vazir: ['Vazir', 'sans-serif'],
       },

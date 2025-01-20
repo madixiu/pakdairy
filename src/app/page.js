@@ -1,14 +1,38 @@
-import Image from 'next/image';
 import SlidingProducts from './Components/Home/SlidingProducts';
 import ProductsCategory from './Components/Home/ProductsCategory';
+import DescriptionComponent from './Components/Home/DescriptionComponent';
+import NewProducts from './Components/Home/NewProducts';
+import { apiUrl } from '@/lib/api';
 export default function Home() {
+  const CategoryData = fetch(apiUrl('/api/category/'))
+  .then((res) => res.json())
+  .then((categoryData) => {
+      console.log(categoryData); // Use the fetched data here
+      return categoryData;
+  })
+  .catch((error) => {
+      console.error('Error fetching category data:', error);
+  });
+  
   return (
-    <div>
-      <SlidingProducts />
+    <div className="flex flex-col py-2">
+      {/* Sliding Products Section */}
       <div>
-        <ProductsCategory />
+        <SlidingProducts />
       </div>
-      <div className="grid grid-col-[20px_1fr_20px] items-center justify-items-center h-[2400px] p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"></div>
+
+      {/* Products Category Section */}
+      <div className='mx-20 my-20'>
+        <ProductsCategory categories={CategoryData} />
+      </div>
+
+      <div className='mx-20 my-20'>
+        <NewProducts />
+      </div>
+      {/* Description Component Section */}
+      <div>
+        <DescriptionComponent />
+      </div>
     </div>
   );
 }

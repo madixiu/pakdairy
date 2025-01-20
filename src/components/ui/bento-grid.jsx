@@ -4,7 +4,7 @@ export const BentoGrid = ({ className, children }) => {
   return (
     <div
       className={cn(
-        'grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto ',
+        'grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-5 gap-4 mx-auto ',
         className
       )}
     >
@@ -13,9 +13,9 @@ export const BentoGrid = ({ className, children }) => {
   );
 };
 
-export const BentoGridItem = ({ title, description, image }) => {
+export const BentoGridItem = ({ title, description, image,onClick }) => {
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg transition-transform transform hover:scale-105">
+    <div onClick={onClick} className="relative overflow-hidden rounded-lg shadow-lg transition-transform transform hover:scale-105 cursor-pointer">
       <div className="h-48 bg-gray-200 relative"> {/* Fixed height for the image */}
         {image && (
           <Image
@@ -29,7 +29,7 @@ export const BentoGridItem = ({ title, description, image }) => {
       </div>
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-70 transition-transform transform translate-y-0">
         <h3 className="text-xs font-semibold">{title}</h3>
-        <span className="text-sm">{description}</span>
+        {/* <span className="text-sm">{description}</span> */}
       </div>
     </div>
   );
