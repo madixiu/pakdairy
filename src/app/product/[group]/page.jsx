@@ -5,7 +5,9 @@ import { apiUrl } from '@/lib/api';
 import Details from './DetailsComponent';
 import Image from 'next/image';
 import { fallbackImage } from '@/lib/constant';
+import { useRouter } from 'next/navigation';
 function Product() {
+  const router = useRouter(); // Initialize useRouter
   const params = useParams();
   const group = decodeURIComponent(params.group);
   const [id, ...stringParts] = group.split('-');
@@ -26,7 +28,11 @@ function Product() {
     }
     setSelectedWeightIndex(index);
   };
+  const handleProductClick = (id,group) => {
+    console.log(group);
+    router.push(`/product/${id}-${group}`);
 
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -36,7 +42,7 @@ function Product() {
         // const responseData2 = result.relative_products || [];
         console.log('===========ORIGINAL===================');
         console.log(responseData);
-        
+
         // Filter the data based on the group name
         const filteredData = responseData.filter(
           (item) => item.group === groupName
@@ -137,28 +143,30 @@ function Product() {
 
                 {/* List of weights with scroll */}
                 <div className="flex flex-col w-full overflow-y-auto overflow-x-hidden gap-2 max-h-[400px]">
-                  {data.map((item, index) => (
-                    item.weight_volume &&
-                    <div
-                      key={index}
-                      onClick={() => setSelectedWeightIndex(index)}
-                      className={`flex justify-center py-3   rounded-xl border-2 text-center hover:cursor-pointer hover:opacity-80 transition-all duration-400 ease-in-out ${
-                        selectedWeightIndex === index
-                          ? 'border-blue-400 bg-primary text-white'
-                          : 'border-primary'
-                      }`}
-                    >
-                      <span
-                        className={`text-sm whitespace-nowrap ${
-                          selectedWeightIndex === index
-                            ? 'text-white'
-                            : 'text-primary'
-                        }`}
-                      >
-                        {item.weight_volume}
-                      </span>
-                    </div>
-                  ))}
+                  {data.map(
+                    (item, index) =>
+                      item.weight_volume && (
+                        <div
+                          key={index}
+                          onClick={() => setSelectedWeightIndex(index)}
+                          className={`flex justify-center py-3   rounded-xl border-2 text-center hover:cursor-pointer hover:opacity-80 transition-all duration-400 ease-in-out ${
+                            selectedWeightIndex === index
+                              ? 'border-blue-400 bg-primary text-white'
+                              : 'border-primary'
+                          }`}
+                        >
+                          <span
+                            className={`text-sm whitespace-nowrap ${
+                              selectedWeightIndex === index
+                                ? 'text-white'
+                                : 'text-primary'
+                            }`}
+                          >
+                            {item.weight_volume}
+                          </span>
+                        </div>
+                      )
+                  )}
                 </div>
               </div>
             </div>
@@ -168,7 +176,35 @@ function Product() {
       <div className="my-16">
         <Details />
       </div>
-    
+      {/* Relative Products */}
+      <div className="flex flex-col flex-1 justify-center items-center bg-white py-4">
+        <div className="flex flex-col items-start flex-1 self-start justify-center mx-20">
+          <h1 className="text-2xl font-bold text-right mb-10">محصولات مرتبط</h1>
+        </div>
+        <div className="grid grid-cols-3 w-[60%]">
+          {relatedProducts.map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col bg-slate-100 items-center justify-center aspect-square border m-2 shadow-sm rounded-xl border-slate-200 overflow-hidden hover:cursor-pointer hover:scale-105 hover:shadow-lg transition-transform duration-300 ease-in-out"
+              onClick={() => handleProductClick(item.category_id, item.group ? item.group : "")}  
+            >
+              <div className="relative w-[70%] h-[70%]">
+                <Image
+                  src={item.image ? item.image : fallbackImage}
+                  alt={item.category}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className=""
+                />
+              </div>
+              <div className="flex flex-row">
+                <span className="me-1">{item.category || ''}</span>
+                <span>{item.group || ''}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
       <h1>Product Group: {groupName}</h1>
       <h2>{data[selectedWeightIndex].image}</h2>
       {data && data.length > 0 ? (
